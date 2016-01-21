@@ -17,40 +17,23 @@ public class PersistenceManagerImpl implements PersistenceManager {
 	private ObjectMapper mapper = new ObjectMapper();
 
 	@Override
-	public File persist(Workflow persistenceProcess, String outputFilePath) {
+	public File persist(Workflow persistenceProcess, String outputFilePath) throws IOException {
 		File outputFile = new File(outputFilePath);
 		try {
 			mapper.writerWithDefaultPrettyPrinter().writeValue(outputFile, persistenceProcess);
-		} catch (JsonGenerationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (JsonGenerationException | JsonMappingException e) {
+			throw new RuntimeException("There was a problem persisting process", e);
 		}
 		return outputFile;
 	}
 
 	@Override
-	public Workflow parse(File jsonFile) {
+	public Workflow parse(File jsonFile) throws IOException {
 		Workflow persistenceProcess = null;
 		try {
 			persistenceProcess = mapper.readValue(jsonFile, Workflow.class);
-		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (JsonGenerationException | JsonMappingException | JsonParseException e) {
+			throw new RuntimeException("There was a problem persisting process", e);
 		}
 		return persistenceProcess;
 	}

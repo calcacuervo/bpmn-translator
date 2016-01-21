@@ -1,6 +1,7 @@
 package com.github.calcacuervo;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,7 @@ import com.github.calcacuervo.service.impl.PersistenceManagerImpl;
 public class JSONPersistTest {
 
 	@Test
-	public void jsonPersistTest() {
+	public void jsonPersistTest() throws IOException {
 		//Process Variables
 		List<Property> processVariables = new ArrayList<Property>();
 		processVariables.add(new Property(new String("robben"), "arjen"));
@@ -74,7 +75,7 @@ public class JSONPersistTest {
 	}
 
 	@Test
-	public void jsonPersistSimpleTest() {
+	public void jsonPersistSimpleTest() throws IOException {
 		//Process Variables
 		List<Property> processVariables = new ArrayList<Property>();
 		

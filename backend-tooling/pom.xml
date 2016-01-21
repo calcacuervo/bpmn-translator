@@ -34,7 +34,7 @@
 			<artifactId>jbpm-bpmn2</artifactId>
 			<version>6.3.0.Final</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.jbpm</groupId>
 			<artifactId>jbpm-designer-backend</artifactId>
@@ -61,4 +61,17 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
