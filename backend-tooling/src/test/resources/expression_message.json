@@ -1,0 +1,1 @@
+{"operator":"AND","conditions":[{"condition":"greaterThan","parameters":["salaryPercentage",2]},{"condition":"greaterThan","parameters":["salaryPercentage2",22]}]}

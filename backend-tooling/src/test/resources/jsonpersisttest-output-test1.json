@@ -1,0 +1,124 @@
+{
+  "workflowName" : "testProcess",
+  "effectiveDate" : 1453343862009,
+  "publish" : false,
+  "version" : "1",
+  "process" : {
+    "@class" : ".Process",
+    "processName" : "testProcess",
+    "startNode" : {
+      "@class" : "com.github.calcacuervo.model.StartNode",
+      "id" : 1,
+      "activityName" : "StartNode",
+      "firstActivityTransition" : {
+        "@class" : ".Transition",
+        "to" : {
+          "@class" : "com.github.calcacuervo.model.Gateway",
+          "id" : 20,
+          "activityName" : "theGatewayName",
+          "type" : 2,
+          "transitions" : [ {
+            "@class" : ".Transition",
+            "to" : {
+              "@class" : "com.github.calcacuervo.model.EndNode",
+              "id" : 5,
+              "activityName" : "EndNode1",
+              "transitions" : null
+            },
+            "condition" : {
+              "to" : {
+                "@class" : "com.github.calcacuervo.model.EndNode",
+                "id" : 5,
+                "activityName" : "EndNode1",
+                "transitions" : null
+              },
+              "name" : "salaryGreaterThan",
+              "type" : "tFormalExpression",
+              "languageType" : "http://www.java.com/java",
+              "expression" : "<![CDATA[return  KieFunctions.greaterThan(salaryPercentage, \"2\");]]>"
+            }
+          }, {
+            "@class" : ".Transition",
+            "to" : {
+              "@class" : "com.github.calcacuervo.model.EndNode",
+              "id" : 6,
+              "activityName" : "EndNode2",
+              "transitions" : null
+            },
+            "condition" : {
+              "to" : {
+                "@class" : "com.github.calcacuervo.model.EndNode",
+                "id" : 6,
+                "activityName" : "EndNode2",
+                "transitions" : null
+              },
+              "name" : "salaryLessEqualThan",
+              "type" : "tFormalExpression",
+              "languageType" : "http://www.java.com/java",
+              "expression" : "<![CDATA[return  KieFunctions.lessOrEqualThan(salaryPercentage, \"2\");]]>"
+            }
+          } ]
+        },
+        "condition" : null
+      },
+      "transitions" : [ {
+        "@class" : ".Transition",
+        "to" : {
+          "@class" : "com.github.calcacuervo.model.Gateway",
+          "id" : 20,
+          "activityName" : "theGatewayName",
+          "type" : 2,
+          "transitions" : [ {
+            "@class" : ".Transition",
+            "to" : {
+              "@class" : "com.github.calcacuervo.model.EndNode",
+              "id" : 5,
+              "activityName" : "EndNode1",
+              "transitions" : null
+            },
+            "condition" : {
+              "to" : {
+                "@class" : "com.github.calcacuervo.model.EndNode",
+                "id" : 5,
+                "activityName" : "EndNode1",
+                "transitions" : null
+              },
+              "name" : "salaryGreaterThan",
+              "type" : "tFormalExpression",
+              "languageType" : "http://www.java.com/java",
+              "expression" : "<![CDATA[return  KieFunctions.greaterThan(salaryPercentage, \"2\");]]>"
+            }
+          }, {
+            "@class" : ".Transition",
+            "to" : {
+              "@class" : "com.github.calcacuervo.model.EndNode",
+              "id" : 6,
+              "activityName" : "EndNode2",
+              "transitions" : null
+            },
+            "condition" : {
+              "to" : {
+                "@class" : "com.github.calcacuervo.model.EndNode",
+                "id" : 6,
+                "activityName" : "EndNode2",
+                "transitions" : null
+              },
+              "name" : "salaryLessEqualThan",
+              "type" : "tFormalExpression",
+              "languageType" : "http://www.java.com/java",
+              "expression" : "<![CDATA[return  KieFunctions.lessOrEqualThan(salaryPercentage, \"2\");]]>"
+            }
+          } ]
+        },
+        "condition" : null
+      } ]
+    },
+    "properties" : [ {
+      "value" : "robben",
+      "name" : "arjen"
+    }, {
+      "value" : 22.2,
+      "name" : "doubleValue"
+    } ]
+  }
+}

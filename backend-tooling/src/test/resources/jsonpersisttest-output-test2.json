@@ -1,0 +1,36 @@
+{
+  "workflowName" : "testProcess",
+  "effectiveDate" : 1453343861951,
+  "publish" : false,
+  "version" : "1",
+  "process" : {
+    "@class" : ".Process",
+    "processName" : "testProcess",
+    "startNode" : {
+      "@class" : "com.github.calcacuervo.model.StartNode",
+      "id" : 1,
+      "activityName" : "StartNode",
+      "firstActivityTransition" : {
+        "@class" : ".Transition",
+        "to" : {
+          "@class" : "com.github.calcacuervo.model.EndNode",
+          "id" : 5,
+          "activityName" : "EndNode1",
+          "transitions" : null
+        },
+        "condition" : null
+      },
+      "transitions" : [ {
+        "@class" : ".Transition",
+        "to" : {
+          "@class" : "com.github.calcacuervo.model.EndNode",
+          "id" : 5,
+          "activityName" : "EndNode1",
+          "transitions" : null
+        },
+        "condition" : null
+      } ]
+    },
+    "properties" : [ ]
+  }
+}
